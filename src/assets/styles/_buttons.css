@@ -1,0 +1,174 @@
+/**
+ * Button Styles
+ * Primary, Secondary, Ghost variants with ripple effect
+ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent2);
+  outline-offset: 2px;
+}
+
+.btn--disabled,
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Sizes */
+.btn--sm {
+  padding: 8px 12px;
+  font-size: var(--fs-xs);
+  gap: var(--space-1);
+}
+
+.btn--md {
+  padding: 10px 16px;
+  font-size: var(--fs-base);
+}
+
+.btn--lg {
+  padding: 12px 20px;
+  font-size: var(--fs-lg);
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* Variants */
+/* Primary - Rainbow gradient */
+.btn--primary {
+  border: none;
+  color: var(--tx-inverse);
+  background: var(--rainbow);
+  background-size: 300% 300%;
+  animation: rainbowBtn 3s linear infinite;
+  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.12);
+}
+
+.btn--primary:hover:not(.btn--disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2), 0 0 30px rgba(102, 102, 255, 0.1);
+  filter: brightness(1.1);
+}
+
+.btn--primary:active:not(.btn--disabled) {
+  transform: translateY(1px);
+  filter: brightness(0.95);
+}
+
+@keyframes rainbowBtn {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Secondary - Outline */
+.btn--secondary {
+  border: 1px solid var(--ln);
+  background: transparent;
+  color: var(--tx2);
+}
+
+.btn--secondary:hover:not(.btn--disabled) {
+  border-color: var(--rb-violet);
+  color: var(--rb-violet);
+  box-shadow: 0 0 12px rgba(204, 51, 255, 0.1);
+}
+
+/* Ghost - Minimal */
+.btn--ghost {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--tx2);
+  padding: 6px 10px;
+}
+
+.btn--ghost:hover:not(.btn--disabled) {
+  background: var(--s2);
+  color: var(--tx);
+}
+
+/* Ripple Effect */
+.btn__ripple-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.btn__ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+  animation: rippleAnim 0.6s ease-out;
+  pointer-events: none;
+}
+
+.btn--secondary .btn__ripple {
+  background: rgba(204, 51, 255, 0.2);
+}
+
+@keyframes rippleAnim {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Loading State */
+.btn--loading .btn__content {
+  opacity: 0;
+}
+
+.btn__spinner {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.btn__spinner svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Button Flash Animation (for click feedback) */
+@keyframes btnFlash {
+  0% { filter: brightness(1.3); }
+  100% { filter: brightness(1); }
+}
+
+.btn-flash {
+  animation: btnFlash 0.2s ease-out;
+}
+
+/* License Gate Specific Buttons */
+.license-bypass-btn {
+  margin-top: var(--space-2);
+  opacity: 0.7;
+}

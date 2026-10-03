@@ -1,0 +1,169 @@
+/**
+ * CSS Custom Properties - Design Tokens
+ * Free Fire Sensitivity Calculator OB54
+ */
+
+:root {
+  /* ===== Colors - Dark Theme (Default) ===== */
+  --bg: #0b0d10;
+  --bg-elevated: #0f1218;
+  --s1: #13161c;
+  --s2: #191d25;
+  --s3: #1f242e;
+  --ln: #242a36;
+  --ln2: #2e3545;
+  --tx: #dddce0;
+  --tx2: #8a8d97;
+  --tx3: #4f5260;
+  --tx-inverse: #0b0d10;
+
+  /* Rainbow Colors */
+  --rb-red: #ff3333;
+  --rb-orange: #ff8c1a;
+  --rb-yellow: #ffd700;
+  --rb-green: #00e64d;
+  --rb-blue: #1a8cff;
+  --rb-indigo: #6666ff;
+  --rb-violet: #cc33ff;
+
+  /* Functional Rainbow */
+  --accent: var(--rb-green);
+  --accent2: var(--rb-blue);
+  --accent-bg: rgba(0, 230, 77, 0.06);
+  --accent-glow: rgba(0, 230, 77, 0.10);
+  --rainbow: linear-gradient(90deg, var(--rb-red), var(--rb-orange), var(--rb-yellow), var(--rb-green), var(--rb-blue), var(--rb-indigo), var(--rb-violet));
+  --rainbow-v: linear-gradient(180deg, var(--rb-red), var(--rb-orange), var(--rb-yellow), var(--rb-green), var(--rb-blue), var(--rb-indigo), var(--rb-violet));
+
+  /* Semantic Colors */
+  --rose: #ff6b8a;
+  --rose-bg: rgba(255, 107, 138, 0.06);
+  --err: #ef4444;
+  --err-bg: rgba(239, 68, 68, 0.06);
+  --err-border: rgba(239, 68, 68, 0.15);
+  --ok: #00e64d;
+  --ok-bg: rgba(0, 230, 77, 0.06);
+  --ok-border: rgba(0, 230, 77, 0.15);
+  --warn: #fbbf24;
+  --warn-bg: rgba(251, 191, 36, 0.06);
+  --info: #3b82f6;
+  --info-bg: rgba(59, 130, 246, 0.06);
+
+  /* ===== Typography ===== */
+  --font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --fs-xs: 0.52rem;   /* 8.3px */
+  --fs-sm: 0.58rem;   /* 9.3px */
+  --fs-base: 0.62rem; /* 10px */
+  --fs-md: 0.68rem;   /* 10.9px */
+  --fs-lg: 0.72rem;   /* 11.5px */
+  --fs-xl: 0.76rem;   /* 12.2px */
+  --fs-2xl: 0.82rem;  /* 13.1px */
+  --fs-3xl: 0.88rem;  /* 14.1px */
+  --fs-4xl: 0.92rem;  /* 14.7px */
+  --fs-5xl: 1.1rem;   /* 17.6px */
+
+  /* ===== Spacing ===== */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* ===== Border Radius ===== */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-full: 9999px;
+
+  /* ===== Shadows ===== */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(255, 215, 0, 0.15);
+  --shadow-glow-strong: 0 0 40px rgba(102, 102, 255, 0.2);
+
+  /* ===== Transitions ===== */
+  --transition-fast: 100ms ease;
+  --transition-base: 150ms ease;
+  --transition-slow: 300ms ease;
+  --transition-spring: 400ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* ===== Z-Index ===== */
+  --z-bg: 0;
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+  --z-tooltip: 500;
+
+  /* ===== Layout ===== */
+  --max-width: 400px;
+  --header-height: 72px;
+  --footer-height: 48px;
+
+  /* ===== Reduced Motion ===== */
+  --animation-duration: 0.3s;
+}
+
+/* ===== Light Theme ===== */
+.theme-light {
+  --bg: #f8f9fb;
+  --bg-elevated: #ffffff;
+  --s1: #eef1f5;
+  --s2: #e4e8ee;
+  --s3: #d9dee6;
+  --ln: #c8cdd8;
+  --ln2: #b8bed0;
+  --tx: #1a1d23;
+  --tx2: #525763;
+  --tx3: #8a8d97;
+  --tx-inverse: #ffffff;
+  --accent-bg: rgba(0, 180, 60, 0.08);
+  --accent-glow: rgba(0, 180, 60, 0.12);
+  --rose-bg: rgba(255, 80, 110, 0.08);
+  --err-bg: rgba(220, 50, 50, 0.08);
+  --ok-bg: rgba(0, 180, 60, 0.08);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== High Contrast ===== */
+@media (prefers-contrast: more) {
+  :root {
+    --ln: #3a4256;
+    --ln2: #4a5266;
+    --tx2: #a0a3ad;
+  }
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --animation-duration: 0.01ms;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}

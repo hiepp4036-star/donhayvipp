@@ -1,0 +1,53 @@
+{
+  "name": "freefire-sensitivity-ob54",
+  "version": "8.0.0",
+  "description": "Free Fire Sensitivity Calculator OB54 - By Benz",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src --ext ts,tsx",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
+    "generate:catalog": "tsx scripts/generate-catalog.ts",
+    "generate:icons": "tsx scripts/generate-pwa-icons.ts",
+    "deploy:preview": "vercel --token=$VERCEL_TOKEN",
+    "deploy:prod": "vercel --prod --token=$VERCEL_TOKEN",
+    "db:push": "tsx scripts/push-schema.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "freefire",
+    "sensitivity",
+    "ob54",
+    "calculator",
+    "game",
+    "pwa"
+  ],
+  "author": "Benz",
+  "license": "MIT",
+  "dependencies": {
+    "@upstash/redis": "^1.31.0",
+    "idb": "^8.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "canvas-confetti": "^1.9.2",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "qrcode": "^1.5.3",
+    "sharp": "^0.33.0",
+    "tsx": "^4.6.0",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0",
+    "vitest": "^1.0.0",
+    "workbox-cli": "^7.0.0"
+  }
+}

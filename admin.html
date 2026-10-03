@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0b0d10">
+  <title>Admin Dashboard · Free Fire OB54</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app-root"></div>
+  <script type="module">
+    import { AdminKeygen } from './src/components/AdminKeygen.ts';
+    import { AdminDashboard } from './src/components/AdminDashboard.ts';
+    import { MatrixRain } from './src/components/MatrixRain.ts';
+    import { getSoundEngine } from './src/components/SoundEngine.ts';
+    import deviceCatalog from './src/assets/data/device-catalog.json';
+
+    const SECRET_KEY = 'ff-ob54-benz-secret-key-2026';
+    const ADMIN_PASSWORD_HASH = 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3';
+
+    // Initialize background
+    const matrixRain = new MatrixRain();
+    matrixRain.start();
+
+    const soundEngine = getSoundEngine({ enabled: true });
+
+    // Initialize Admin Dashboard
+    const dashboard = new AdminDashboard({
+      onRefresh: () => dashboard?.refresh()
+    });
+    document.body.appendChild(dashboard.getElement());
+
+    // Initialize Admin Keygen (mounted inside dashboard)
+    const keygen = new AdminKeygen({
+      catalog: deviceCatalog,
+      secretKey: SECRET_KEY,
+      adminPasswordHash: ADMIN_PASSWORD_HASH
+    });
+
+    // Make keygen globally accessible for dashboard to mount
+    window.AdminKeygen = keygen;
+
+    // Initialize dashboard after keygen is ready
+    dashboard.init();
+  </script>
+</body>
+</html>
